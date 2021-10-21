@@ -94,6 +94,8 @@ def NewAccount(proxy=False, hide=True, debug=False):
         # close
         if debug: console.Log("Closing Browser")
         browser.close()
+        
+        # Account Class
         class Account:
             Email = Storage.Email
             Pass = Storage.Pass
