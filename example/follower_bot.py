@@ -13,4 +13,3 @@ instaId = "11873066713"
 
 print(f"Follow {instaId}")
 api.friendships_create(instaId) # follow this
-
