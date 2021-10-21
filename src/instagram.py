@@ -1,5 +1,8 @@
 # Logic -  useful for build, execution and beautiful , this is the automation that creates the accounts in instagram
 # code:
+from logging import log
+
+
 def NewAccount(proxy=False, hide=True, debug=False):
     # imports
     from playwright.sync_api import sync_playwright
@@ -20,6 +23,7 @@ def NewAccount(proxy=False, hide=True, debug=False):
         if proxy == False:
             browser = p.chromium.launch(headless=hide)
         else:
+            log(f"Using Proxy -> {proxy['config']}")
             browser = p.chromium.launch(headless=hide, proxy=proxy)
        
         page = browser.new_page()
@@ -90,7 +94,12 @@ def NewAccount(proxy=False, hide=True, debug=False):
         # close
         if debug: console.Log("Closing Browser")
         browser.close()
-        return {"Email":Storage.Email, "Pass":Storage.Pass, "Username":Storage.Username}
+        class Account:
+            Email = Storage.Email
+            Pass = Storage.Pass
+            User = Storage.Username
+        
+        return Account
 
 class instagram:
     def __init__(self) -> None:
