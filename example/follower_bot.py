@@ -11,6 +11,6 @@ print(f"Bot - Using: {user_name}, {password}")
 api = Client(user_name, password)
 instaId = "11873066713"
 
-print("Follow {instaId}")
+print(f"Follow {instaId}")
 api.friendships_create(instaId) # follow this
 
