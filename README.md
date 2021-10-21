@@ -45,4 +45,4 @@ log - code: 749581
 log - Closing Browser
 {"Email":email@sub.com, "Pass":password, "Username":username}
 ```
-
+> Hey, check out how this [project](https://github.com/gh-ninja/instagram_massive) can be useful at: [examples](https://github.com/gh-ninja/instagram_massive/tree/main/example) ! Tank'U ❤️ 
