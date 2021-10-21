@@ -1,6 +1,6 @@
 # Logic -  useful for build, execution and beautiful , this is the automation that creates the accounts in instagram
 # code:
-def NewAccount():
+def NewAccount(proxy=False, hide=True):
     # imports
     from playwright.sync_api import sync_playwright
     from src.genName import genName; name = genName() # for generate new names with subnames
@@ -11,7 +11,7 @@ def NewAccount():
     with sync_playwright() as p:
         # New storage for accounts
         Storage = S.New()
-        browser = p.chromium.launch(headless=False)
+        browser = p.chromium.launch(headless=hide, proxy=proxy)
         page = browser.new_page()
         
         # Get Email and Name
