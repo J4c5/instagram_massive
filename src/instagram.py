@@ -23,7 +23,7 @@ def NewAccount(proxy=False, hide=True, debug=False):
         if proxy == False:
             browser = p.chromium.launch(headless=hide)
         else:
-            log(f"Using Proxy -> {proxy['config']}")
+            log(f"Using Proxy -> {proxy['server']}")
             browser = p.chromium.launch(headless=hide, proxy=proxy)
        
         page = browser.new_page()
